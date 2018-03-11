@@ -1,0 +1,347 @@
+@import "reset.min.css";
+
+html {
+  font-size: 100px;
+}
+
+html, body {
+  height: 100%;
+  background-color: #F4F4F4;
+  overflow: hidden;
+  -webkit-user-select: none;
+  //z-index: -20;
+}
+
+//mainBox
+.mainBox {
+  position: relative;
+  margin: 0 auto;
+  max-width: 640px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  //z-index: -10;
+  .bg {
+    position: relative;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    background: url("../img/bg0.jpg") no-repeat center center;
+    background-size: cover;
+    -webkit-filter: blur(.1rem) brightness(30%);
+    //z-index: -9;
+  }
+}
+
+//headerBox
+.headerBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1.37rem;
+  background-color: rgba(0, 0, 0, .1);
+  border-bottom: 0.03rem solid rgba(255, 255, 255, .2);
+  .top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0.4rem;
+    .top-lt {
+      top: 0;
+      position: absolute;
+      left: 0;
+      width: 2.2rem;
+      height: 0.4rem;
+      background: url("../img/phoneBg_lt.png") no-repeat;
+      -webkit-background-size: 100% 100%;
+      background-size: 100% 100%;
+    }
+    .topTime {
+      display: block;
+      position: absolute;
+      top: .06rem;
+      left: 50%;
+      width: .6rem;
+      margin-left: unit(-.6/2, rem);
+      color: rgba(255, 255, 255, .92);
+      font-size: .22rem;
+      font-weight: bold;
+    }
+
+    .top-Rt {
+      top: 0;
+      position: absolute;
+      right: 0;
+      width: 2rem;
+      height: 0.4rem;
+      background: url("../img/phoneBg_Rt.png") no-repeat;
+      -webkit-background-size: 100% 100%;
+      background-size: 100% 100%;
+    }
+  }
+  i {
+    position: absolute;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .95);
+    bottom: 0;
+    &.left {
+      left: 0;
+    }
+    &.right {
+      font-size: .65rem;
+      right: .2rem;
+      bottom: .05rem;
+    }
+  }
+  .songName {
+    font-size: .30rem;
+    color: rgba(255, 255, 255, .95);
+    text-align: center;
+    margin-top: .55rem;
+  }
+  .singer {
+    font-size: .26rem;
+    color: rgba(255, 255, 255, .85);
+    text-align: center;
+    margin-top: 0.02rem;
+    font-weight: normal;
+  }
+}
+
+//discBox
+.discBox {
+  position: absolute;
+  top: 1.4rem;
+  width: 100%;
+  height: 6.5rem;
+  overflow: hidden;
+  //background-color: #ccc;
+  .rocker {
+    width: 4.4rem;
+    height: 2.9rem;
+    position: absolute;
+    background: url("../img/rocker.png") no-repeat center;
+    background-size: 4.4rem 2.9rem;
+    left: 50%;
+    top: 50%;
+    margin-top: -4.7rem;
+    margin-left: -2.2rem;
+    z-index: 10;
+    transition: all 1s;
+  }
+  .discBig {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -2.5rem;
+    margin-top: -2.1rem;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    border: 0.03rem solid rgba(255, 255, 255, .15);
+    box-sizing: border-box;
+
+    .disc {
+      width: 4.2rem;
+      height: 4.2rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -2.1rem;
+      margin-top: -2.1rem;
+      background: url("../img/disc.png") no-repeat center;
+      background-size: 4.2rem;
+      transition: all 1s;
+      .discImg {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -1.5rem;
+        margin-top: -1.5rem;
+        background: url("../img/bg0.jpg") no-repeat center;
+        background-size: cover;
+        border-radius: 50%;
+        //border: 0.03rem solid rgba(0,0,0,.2);
+        //box-sizing: border-box;
+      }
+    }
+  }
+}
+
+//lyricBox
+.lyricBox {
+  position: absolute;
+  width: 100%;
+  //height: 1.5rem;
+  //height: auto;
+  top: 7.8rem;
+  overflow: hidden;
+  .wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: all .5s;
+    height: 100%;
+    p {
+      text-align: center;
+      color: rgba(255, 255, 255, .6);
+      font-size: .23rem;
+      line-height: 0.4rem;
+      transition: all .3s;
+      &.current {
+        font-size: .26rem;
+        color: rgb(206, 62, 62);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//progress
+.progressBox {
+  position: absolute;
+  width: 100%;
+  height: .8rem;
+  line-height: .8rem;
+  bottom: 1.2rem;
+  color: rgba(255, 255, 255, .8);
+  font-size: 0;
+  div, span {
+    display: inline-block;
+  }
+  #curTime, #totalTime {
+    position: relative;
+    width: 1rem;
+    height: 100%;
+    left: .2rem;
+    font-size: .26rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  #totalTime {
+    position: relative;
+    left: .4rem;
+  }
+  .progressBar {
+    width: 3.8rem;
+    height: .08rem;
+    background-color: rgba(255, 255, 255, .8);
+    vertical-align: middle;
+    position: relative;
+    left: .3rem;
+    border-radius: .04rem;
+
+    .loaded{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: .04rem;
+      background-color: rgba(206, 62, 62,.2);
+      transition: all .5s;
+    }
+
+
+    .progressing {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: .04rem;
+      background-color: rgb(206, 62, 62);
+
+    }
+
+    .progressbtn {
+      width: .24rem;
+      height: .24rem;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      left: 0%;
+      top: -.08rem;
+      margin-left: -.12rem;
+    }
+  }
+
+}
+
+//footerBox
+.footerBox {
+  position: absolute;
+  width: 100%;
+  height: .8rem;
+  bottom: .4rem;
+
+  a {
+    display: inline-block;
+    color: rgba(255, 255, 255, .8);
+    width: .6rem;
+    height: .6rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: .6rem;
+    margin-top: -.3rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    &#play {
+      width: .8rem;
+      height: .8rem;
+      font-size: .54rem;
+      margin-left: -.415rem;
+      margin-top: -.415rem;
+      line-height: .8rem;
+      border-radius: 50%;
+      border: 0.03rem solid rgba(255, 255, 255, .8);
+      text-align: center;
+    }
+    &#prev {
+      margin-left: -1.5rem;
+    }
+    &#next {
+      margin-left: .9rem;
+    }
+
+    &#playMode {
+      width: .5rem;
+      height: .5rem;
+      margin-left: -2.5rem;
+      margin-top: -.25rem;
+      font-size: .5rem;
+      line-height: .5rem;
+    }
+    &#mute {
+      width: .5rem;
+      height: .5rem;
+      margin-left: 1.9rem;
+      margin-top: -.25rem;
+      font-size: .5rem;
+      line-height: .5rem;
+    }
+
+  }
+
+}
+
+.musicRotate {
+  -webkit-animation: musicRotate 6S linear infinite both;
+}
+
+@keyframes musicRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

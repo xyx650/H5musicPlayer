@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>H5 Player</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+
+    <link rel="stylesheet/less" href="css/index.less">
+    <script src="js/less-2.5.3.min.js"></script>
+
+    <script>
+        ~function () {
+            const selfAdaptation = function () {
+                let deviceWidth = document.documentElement.clientWidth;
+                const designWidth = 640;
+                if (deviceWidth >= 640) {
+                    document.documentElement.style.fontSize = '100px';
+                    return;
+                }
+                document.documentElement.style.fontSize = deviceWidth / designWidth * 100 + 'px';
+            }
+            selfAdaptation();
+
+            window.addEventListener('resize', selfAdaptation, false);
+        }();
+    </script>
+</head>
+<body>
+<main class="mainBox">
+    <div class="bg"></div>
+
+    <!--headerBox start-->
+    <header class="headerBox">
+        <div class="top">
+            <p class="top-lt"></p>
+            <p class="topTime"></p>
+            <p class="top-Rt"></p>
+        </div>
+
+        <i class="left iconfont icon-icon--2"></i>
+        <i class="right iconfont icon-icon--3"></i>
+        <h3 class="songName">陪你度过漫长岁月</h3>
+        <h4 class="singer">陈奕迅</h4>
+    </header>
+    <!--headerBox end-->
+
+
+    <!--discBox start-->
+    <section class="discBox">
+        <div class="rocker"></div>
+        <div class="discBig">
+            <div class="disc">
+                <div class="discImg"></div>
+            </div>
+        </div>
+
+    </section>
+    <!--discBox end-->
+
+
+    <!--lyricBox start-->
+    <section class="lyricBox">
+        <div class="wrapper">
+            <!--<p>走过了人来人往</p>-->
+            <!--<p class="current">不喜欢也得欣赏</p>-->
+            <!--<p>我是沉默的存在</p>-->
+        </div>
+    </section>
+    <!--lyricBox end-->
+
+    <!--progressBox start-->
+    <section class="progressBox">
+        <span id="curTime">00:00</span>
+        <div class="progressBar">
+            <div class="loaded"></div>
+            <div class="progressing"></div>
+            <div class="progressbtn"></div>
+        </div>
+        <span id="totalTime">00:00</span>
+    </section>
+    <!--progressBox end-->
+
+    <!--footer start-->
+    <footer class="footerBox">
+        <a href="javascript:;" id="play" class="iconfont icon-icon--7"></a>
+        <a href="javascript:;" id="prev" class="iconfont icon-icon--9"></a>
+        <a href="javascript:;" id="next" class="iconfont icon-icon--8"></a>
+        <a href="javascript:;" id="playMode" class="iconfont icon-icon--1" playMode="0"></a>
+        <a href="javascript:;" id="mute" class="iconfont icon-icon--6"></a>
+    </footer>
+    <!--footer start-->
+    <audio id="audio" preload="none"></audio>
+</main>
+
+
+
+
+
+
+
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
