@@ -385,5 +385,3 @@ let musicRender = (function ($) {
 })(Zepto);
 
 musicRender.init();
-
-
